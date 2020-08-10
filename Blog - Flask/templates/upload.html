@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h3>Dosya Yükle</h3>
+<hr>
+<h5>Yüklemek istediğiniz dosyayı seçiniz:</h5>
+    <form id="upload-form" action={{url_for('upload')}} method="POST" enctype=multipart/form-data>
+        <input type="file" name="file" accept="image/*" multiple>
+        <input type="submit" value="Upload">
+    </form>
+
+{% endblock body %}

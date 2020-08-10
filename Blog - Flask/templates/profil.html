@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h3>{{session.username}} Profili</h3>
+<hr>
+    <div class="jumbotron">
+        <h5>Username: <small>{{session.username}}</small></h5>
+        <h5>Your Articles: <a href="/dashboard"><button type="button" class="btn btn-primary btn-sm">Makalelerinizi düzenlemek için buraya tıklayabilirsiniz.</button></a></h5>
+        <h5>Profile Picture</h5>
+            <form action="profil" method=post enctype=multipart/form-data>
+                <input type=file name=file>
+                <input type=submit value=Upload>
+            </form>
+                <br>
+
+                <img src="static/{{session.user_image}}" alt="User Image" style="width:100px;height:100px">
+    
+{% endblock body %}
